@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+
+    <title>TLS Basics - Tech Talk Tuesdays</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>TLS Basics</h2>
+                <h3>Keeping you safe(er)</h3>
+                <p style="text-align: right;">Tech Talk Tuesdays
+                    <br>3/20/2018</p>
+            </section>
+            <section>
+                <h2>What is TLS?</h2>
+                <ul>
+                    <li>Transport Layer Security</li>
+                    <li>A cryptographic protocol</li>
+                    <li>Replaces SSL (Secure Sockets Layer)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>What does TLS do?</h2>
+                <p>TLS helps with:</p>
+                <ul>
+                    <li>Confidentiality</li>
+                    <li>Integrity</li>
+                    <li>Authenticity</li>
+                </ul>
+                <p>Remember: <em>CIA</em></p>
+            </section>
+            <section>
+                <h3>Key Concept: Man in the Middle</h3>
+                <p>Anything between the two endpoints trying to communicate, such as:
+                <ul>
+                    <li>Routers</li>
+                    <li>Wi-Fi access point</li>
+                    <li>DNS servers</li>
+                    <li>Wire (cat 5, copper, fibre optic, etc.)</li>
+                    <li>Many, many, many, many other things...</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Confidentiality</h2>
+                <ul>
+                    <li>Communication is encrypted
+                        <ul><li>Stops man in the middle from snooping</li></ul>
+                    </li>
+                    <li>Uses symmetric encryption</li>
+                    <li>Keys used are uniquely generated for each connection</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Integrity</h2>
+                <ul>
+                    <li>Communication cannot be tampered with
+                        <ul><li>Stops man in the middle from altering content</li></ul>
+                    </li>
+                    <li>Uses symmetric encryption</li>
+                    <li>Keys used are uniquely generated for each connection</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Authenticity</h2>
+                <ul>
+                    <li>Verifies the server's identity
+                        <ul><li>Stops impersonation by a man in the middle</li></ul>
+                    <li>Uses public-key encryption</li>
+                    <li>Typically relies on delegated authority</li>
+                </ul>
+            </section>
+            <section>
+                <h2>TLS Handshake</h2>
+                <ul>
+                    <li>Determines cipher suite to use</li>
+                    <li>Authenticates the server (optionally, the client as well)</li>
+                    <li>Establishes and shares session key information</li>
+                </ul>
+            </section>
+            <section style="height: 100%">
+                <img src="images/tls-handshake.png" style="height: 90%; background-color: white" />
+            </section>
+            <section>
+                <h3>Key Concept: Public-key vs Symmetric Encryption</h3>
+                <ul>
+                    <li>Public-key encryption
+                        <ul>
+                            <li>Leverages public information</li>
+                            <li>Computationally costly</li>
+                        </ul>
+                    </li>
+                    <li>Symmetric encryption
+                            <ul>
+                                <li>Requires a shared secret</li>
+                                <li>Computationally cheaper than public-key</li>
+                            </ul>
+                        </li>
+                    </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ],
+            history: true
+        });
+    </script>
+</body>
+
+</html>

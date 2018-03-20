@@ -51,24 +51,29 @@
                     <li>Integrity</li>
                     <li>Authenticity</li>
                 </ul>
-                <p>Remember: <em>CIA</em></p>
+                <p>Remember:
+                    <em>CIA</em>
+                </p>
             </section>
             <section>
                 <h3>Key Concept: Man in the Middle</h3>
                 <p>Anything between the two endpoints trying to communicate, such as:
-                <ul>
-                    <li>Routers</li>
-                    <li>Wi-Fi access point</li>
-                    <li>DNS servers</li>
-                    <li>Wire (cat 5, copper, fibre optic, etc.)</li>
-                    <li>Many, many, many, many other things...</li>
-                </ul>
+                    <ul>
+                        <li>Routers</li>
+                        <li>Wi-Fi access point</li>
+                        <li>DNS servers</li>
+                        <li>Proxies (Fiddler)</li>
+                        <li>Wire (cat 5, copper, fibre optic, etc.)</li>
+                        <li>Many, many, many, many other things...</li>
+                    </ul>
             </section>
             <section>
                 <h2>Confidentiality</h2>
                 <ul>
                     <li>Communication is encrypted
-                        <ul><li>Stops man in the middle from snooping</li></ul>
+                        <ul>
+                            <li>Stops man in the middle from snooping</li>
+                        </ul>
                     </li>
                     <li>Uses symmetric encryption</li>
                     <li>Keys used are uniquely generated for each connection</li>
@@ -78,7 +83,9 @@
                 <h2>Integrity</h2>
                 <ul>
                     <li>Communication cannot be tampered with
-                        <ul><li>Stops man in the middle from altering content</li></ul>
+                        <ul>
+                            <li>Stops man in the middle from altering content</li>
+                        </ul>
                     </li>
                     <li>Uses symmetric encryption</li>
                     <li>Keys used are uniquely generated for each connection</li>
@@ -88,9 +95,11 @@
                 <h2>Authenticity</h2>
                 <ul>
                     <li>Verifies the server's identity
-                        <ul><li>Stops impersonation by a man in the middle</li></ul>
-                    <li>Uses public-key encryption</li>
-                    <li>Typically relies on delegated authority</li>
+                        <ul>
+                            <li>Stops impersonation by a man in the middle</li>
+                        </ul>
+                        <li>Uses public-key encryption</li>
+                        <li>Typically relies on delegated authority</li>
                 </ul>
             </section>
             <section>
@@ -114,12 +123,30 @@
                         </ul>
                     </li>
                     <li>Symmetric encryption
-                            <ul>
-                                <li>Requires a shared secret</li>
-                                <li>Computationally cheaper than public-key</li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <ul>
+                            <li>Requires a shared secret</li>
+                            <li>Computationally cheaper than public-key</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>TLS Options</h3>
+                <ul>
+                    <li>TLS version</li>
+                    <li>Cipher suite</li>
+                    <li>Algorithm</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Other Considerations</h3>
+                <ul>
+                    <li>Initial authority trust</li>
+                    <li>Quantum computing</li>
+                    <li>Forward secrecy</li>
+                    <li>Client authentication</li>
+                    <li>Cookie security</li>
+                </ul>
             </section>
         </div>
     </div>
